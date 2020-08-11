@@ -7,8 +7,8 @@ const Counter = ({ counter, decrement, increment }) => (
   <>
     <h1>Counter: { counter }</h1>
     <ul>
-      <li><button onClick={decrement}>Decrement</button></li>
-      <li><button onClick={increment}>Increment</button></li>
+      <li><button onClick={() => decrement(counter)}>Decrement</button></li>
+      <li><button onClick={() => increment(counter)}>Increment</button></li>
     </ul>
   </>
 );
@@ -18,8 +18,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchProps = dispatch => ({
-  decrement: () => dispatch(actions.decrement()),
-  increment: () => dispatch(actions.increment()),
+  decrement: (counter) => dispatch(actions.decrement(counter)),
+  increment: (counter) => dispatch(actions.increment(counter)),
 });
 
 export default connect(mapStateToProps, mapDispatchProps)(Counter);

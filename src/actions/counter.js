@@ -1,11 +1,13 @@
 import { actionsTypes } from '../constants/counter'
 
 const actions = {
-  decrement: () => ({
-    type: actionsTypes.COUNTER_DECREMENT
+  decrement: (payload) => ({
+    type: actionsTypes.COUNTER_DECREMENT,
+    payload: payload
   }),
-  increment: () => ({
-    type: actionsTypes.COUNTER_INCREMENT
+  increment: (payload) => ({
+    type: actionsTypes.COUNTER_INCREMENT,
+    payload: payload
   })
 }
 

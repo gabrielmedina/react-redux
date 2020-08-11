@@ -7,9 +7,9 @@ const INITIAL_STATE = {
 const reducers = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case actionsTypes.COUNTER_DECREMENT:
-      return { ...state, counter: state.counter - 1 }
+      return { ...state, counter: action.payload - 1 }
     case actionsTypes.COUNTER_INCREMENT:
-      return { ...state, counter: state.counter + 1 }
+      return { ...state, counter: action.payload + 1 }
     default:
       return state
   }
